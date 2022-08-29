@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183A128BD31D3006AF715 /* AppDelegate.swift */; };
 		C0C183A428BD31D3006AF715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183A328BD31D3006AF715 /* SceneDelegate.swift */; };
-		C0C183A628BD31D3006AF715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183A528BD31D3006AF715 /* ViewController.swift */; };
 		C0C183A928BD31D3006AF715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C183A728BD31D3006AF715 /* Main.storyboard */; };
 		C0C183AB28BD31D4006AF715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C183AA28BD31D4006AF715 /* Assets.xcassets */; };
 		C0C183AE28BD31D4006AF715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C183AC28BD31D4006AF715 /* LaunchScreen.storyboard */; };
+		C0C183BA28BD34B1006AF715 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183B928BD34B1006AF715 /* TabBarController.swift */; };
+		C0C183BC28BD351F006AF715 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183BB28BD351F006AF715 /* TabBarPresenter.swift */; };
+		C0C183BE28BD3528006AF715 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183BD28BD3528006AF715 /* TabBarRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C0C1839E28BD31D3006AF715 /* Viper-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viper-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C183A128BD31D3006AF715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C183A328BD31D3006AF715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C0C183A528BD31D3006AF715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C0C183A828BD31D3006AF715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0C183AA28BD31D4006AF715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0C183AD28BD31D4006AF715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0C183AF28BD31D4006AF715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0C183B928BD34B1006AF715 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C0C183BB28BD351F006AF715 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		C0C183BD28BD3528006AF715 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		C0C183A028BD31D3006AF715 /* Viper-Example */ = {
 			isa = PBXGroup;
 			children = (
-				C0C183A128BD31D3006AF715 /* AppDelegate.swift */,
-				C0C183A328BD31D3006AF715 /* SceneDelegate.swift */,
-				C0C183A528BD31D3006AF715 /* ViewController.swift */,
-				C0C183A728BD31D3006AF715 /* Main.storyboard */,
+				C0C183B728BD3480006AF715 /* Modules */,
+				C0C183B628BD3407006AF715 /* Storyboards */,
+				C0C183B528BD33E8006AF715 /* Core */,
 				C0C183AA28BD31D4006AF715 /* Assets.xcassets */,
-				C0C183AC28BD31D4006AF715 /* LaunchScreen.storyboard */,
 				C0C183AF28BD31D4006AF715 /* Info.plist */,
 			);
 			path = "Viper-Example";
+			sourceTree = "<group>";
+		};
+		C0C183B528BD33E8006AF715 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C0C183A128BD31D3006AF715 /* AppDelegate.swift */,
+				C0C183A328BD31D3006AF715 /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C0C183B628BD3407006AF715 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C0C183A728BD31D3006AF715 /* Main.storyboard */,
+				C0C183AC28BD31D4006AF715 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C0C183B728BD3480006AF715 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C0C183B828BD3486006AF715 /* TabBar */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C0C183B828BD3486006AF715 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C0C183B928BD34B1006AF715 /* TabBarController.swift */,
+				C0C183BB28BD351F006AF715 /* TabBarPresenter.swift */,
+				C0C183BD28BD3528006AF715 /* TabBarRouter.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C183A628BD31D3006AF715 /* ViewController.swift in Sources */,
+				C0C183BC28BD351F006AF715 /* TabBarPresenter.swift in Sources */,
+				C0C183BA28BD34B1006AF715 /* TabBarController.swift in Sources */,
 				C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */,
 				C0C183A428BD31D3006AF715 /* SceneDelegate.swift in Sources */,
+				C0C183BE28BD3528006AF715 /* TabBarRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
