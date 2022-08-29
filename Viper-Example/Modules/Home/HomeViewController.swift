@@ -11,6 +11,7 @@ protocol HomeViewInterface: AnyObject { }
 
 class HomeViewController: UIViewController, HomeViewInterface {
 
+    @IBOutlet private weak var collectionView: UICollectionView!
     var presenter: HomePresenterInterface?
     
     override func viewDidLoad() {

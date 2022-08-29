@@ -19,6 +19,7 @@
 		C0C183C528BD37CB006AF715 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183C428BD37CB006AF715 /* HomePresenter.swift */; };
 		C0C183C728BD37E2006AF715 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183C628BD37E2006AF715 /* HomeInteractor.swift */; };
 		C0C183C928BD37E8006AF715 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183C828BD37E8006AF715 /* HomeRouter.swift */; };
+		C0C183CC28BD3B84006AF715 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183CB28BD3B84006AF715 /* BaseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C0C183C428BD37CB006AF715 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		C0C183C628BD37E2006AF715 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		C0C183C828BD37E8006AF715 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		C0C183CB28BD3B84006AF715 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +119,21 @@
 		C0C183BF28BD3791006AF715 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C0C183CA28BD3B72006AF715 /* View */,
 				C0C183C228BD37BF006AF715 /* HomeViewController.swift */,
 				C0C183C428BD37CB006AF715 /* HomePresenter.swift */,
 				C0C183C628BD37E2006AF715 /* HomeInteractor.swift */,
 				C0C183C828BD37E8006AF715 /* HomeRouter.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C0C183CA28BD3B72006AF715 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0C183CB28BD3B84006AF715 /* BaseCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				C0C183BA28BD34B1006AF715 /* TabBarController.swift in Sources */,
 				C0C183C728BD37E2006AF715 /* HomeInteractor.swift in Sources */,
 				C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */,
+				C0C183CC28BD3B84006AF715 /* BaseCollectionViewCell.swift in Sources */,
 				C0C183A428BD31D3006AF715 /* SceneDelegate.swift in Sources */,
 				C0C183BE28BD3528006AF715 /* TabBarRouter.swift in Sources */,
 				C0C183C928BD37E8006AF715 /* HomeRouter.swift in Sources */,
