@@ -15,6 +15,10 @@
 		C0C183BA28BD34B1006AF715 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183B928BD34B1006AF715 /* TabBarController.swift */; };
 		C0C183BC28BD351F006AF715 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183BB28BD351F006AF715 /* TabBarPresenter.swift */; };
 		C0C183BE28BD3528006AF715 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183BD28BD3528006AF715 /* TabBarRouter.swift */; };
+		C0C183C328BD37BF006AF715 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183C228BD37BF006AF715 /* HomeViewController.swift */; };
+		C0C183C528BD37CB006AF715 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183C428BD37CB006AF715 /* HomePresenter.swift */; };
+		C0C183C728BD37E2006AF715 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183C628BD37E2006AF715 /* HomeInteractor.swift */; };
+		C0C183C928BD37E8006AF715 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183C828BD37E8006AF715 /* HomeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		C0C183B928BD34B1006AF715 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C0C183BB28BD351F006AF715 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		C0C183BD28BD3528006AF715 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		C0C183C228BD37BF006AF715 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C0C183C428BD37CB006AF715 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		C0C183C628BD37E2006AF715 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		C0C183C828BD37E8006AF715 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 		C0C183B728BD3480006AF715 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C0C183BF28BD3791006AF715 /* Home */,
 				C0C183B828BD3486006AF715 /* TabBar */,
 			);
 			path = Modules;
@@ -103,6 +112,17 @@
 				C0C183BD28BD3528006AF715 /* TabBarRouter.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C0C183BF28BD3791006AF715 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C0C183C228BD37BF006AF715 /* HomeViewController.swift */,
+				C0C183C428BD37CB006AF715 /* HomePresenter.swift */,
+				C0C183C628BD37E2006AF715 /* HomeInteractor.swift */,
+				C0C183C828BD37E8006AF715 /* HomeRouter.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,11 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C183C528BD37CB006AF715 /* HomePresenter.swift in Sources */,
 				C0C183BC28BD351F006AF715 /* TabBarPresenter.swift in Sources */,
 				C0C183BA28BD34B1006AF715 /* TabBarController.swift in Sources */,
+				C0C183C728BD37E2006AF715 /* HomeInteractor.swift in Sources */,
 				C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */,
 				C0C183A428BD31D3006AF715 /* SceneDelegate.swift in Sources */,
 				C0C183BE28BD3528006AF715 /* TabBarRouter.swift in Sources */,
+				C0C183C928BD37E8006AF715 /* HomeRouter.swift in Sources */,
+				C0C183C328BD37BF006AF715 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
