@@ -13,12 +13,12 @@ protocol TabBarViewInterface: AnyObject {
 
 class TabBarController: UITabBarController {
     
-    private lazy var mockVC: UIViewController = {
+    private lazy var homeVC: UIViewController = {
         let navigationController = UINavigationController()
-        let mockViewController = MockViewController()
-        navigationController.viewControllers = [mockViewController]
-        navigationController.tabBarItem.title = "Mock"
-        navigationController.tabBarItem.image = UIImage(systemName: "questionmark")!
+        let homeViewController = HomeRouter.createModule(using: navigationController)
+        navigationController.viewControllers = [homeViewController]
+        navigationController.tabBarItem.title = "Home"
+        navigationController.tabBarItem.image = UIImage(systemName: "house.circle")!
         return navigationController
     }()
     
@@ -38,16 +38,7 @@ extension TabBarController: TabBarViewInterface {
     
     func setupView() {
         viewControllers = [
-            mockVC,
+            homeVC
         ]
-    }
-}
-
-// TODO: When completed that project delete this
-class MockViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
     }
 }
