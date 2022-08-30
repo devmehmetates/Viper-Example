@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C047DCB728BE8923002BE948 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047DCB628BE8923002BE948 /* BaseModel.swift */; };
 		C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183A128BD31D3006AF715 /* AppDelegate.swift */; };
 		C0C183A428BD31D3006AF715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183A328BD31D3006AF715 /* SceneDelegate.swift */; };
 		C0C183A928BD31D3006AF715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C183A728BD31D3006AF715 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C047DCB628BE8923002BE948 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		C0C1839E28BD31D3006AF715 /* Viper-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viper-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C183A128BD31D3006AF715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C183A328BD31D3006AF715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C047DCB528BE8910002BE948 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C047DCB628BE8923002BE948 /* BaseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C0C1839528BD31D3006AF715 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 		C0C183A028BD31D3006AF715 /* Viper-Example */ = {
 			isa = PBXGroup;
 			children = (
+				C047DCB528BE8910002BE948 /* Models */,
 				C0C183B728BD3480006AF715 /* Modules */,
 				C0C183B628BD3407006AF715 /* Storyboards */,
 				C0C183B528BD33E8006AF715 /* Core */,
@@ -209,6 +220,7 @@
 			files = (
 				C0C183C528BD37CB006AF715 /* HomePresenter.swift in Sources */,
 				C0C183BC28BD351F006AF715 /* TabBarPresenter.swift in Sources */,
+				C047DCB728BE8923002BE948 /* BaseModel.swift in Sources */,
 				C0C183BA28BD34B1006AF715 /* TabBarController.swift in Sources */,
 				C0C183C728BD37E2006AF715 /* HomeInteractor.swift in Sources */,
 				C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */,
