@@ -7,8 +7,14 @@
 
 import Foundation
 
-protocol HomeInteractorInterface: AnyObject { }
+protocol HomeInteractorInterface: AnyObject {
+    var datas: [BaseModel]? { get }
+}
 
 final class HomeInteractor: HomeInteractorInterface {
     
+    var datas: [BaseModel]? {
+        let _ = LocalService() // dummy datas saving here
+        return LocalService.readData()
+    }
 }

@@ -5,8 +5,6 @@
 //  Created by Mehmet Ateş on 29.08.2022.
 //
 
-import Foundation
-
 protocol HomePresenterInterface: AnyObject {
     func notifyViewDidLoad()
     var getItemCount: Int { get }
@@ -16,8 +14,9 @@ protocol HomePresenterInterface: AnyObject {
 final class HomePresenter {
     
     private weak var view: HomeViewInterface?
-    private weak var router: HomeRouterInterface?
-    private weak var interactor: HomeInteractorInterface?
+    private var router: HomeRouterInterface?
+    private var interactor: HomeInteractorInterface?
+    private var datas: [BaseModel]?
     
     init(view: HomeViewInterface?, router: HomeRouterInterface?, interactor: HomeInteractorInterface?) {
         self.view = view
@@ -30,7 +29,7 @@ final class HomePresenter {
 extension HomePresenter: HomePresenterInterface {
     
     var getItemCount: Int {
-        10
+        datas?.count ?? 0
     }
     
     var getSectionCount: Int {
@@ -40,6 +39,7 @@ extension HomePresenter: HomePresenterInterface {
     func notifyViewDidLoad() {
         view?.setupView()
         view?.setTitle(with: "Home")
+        datas = interactor?.datas
     }
 }
 
