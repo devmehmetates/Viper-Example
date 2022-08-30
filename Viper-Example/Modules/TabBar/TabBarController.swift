@@ -15,8 +15,8 @@ class TabBarController: UITabBarController {
     
     private lazy var homeVC: UIViewController = {
         let navigationController = UINavigationController()
-        let mockViewController = HomeRouter.createModule(using: navigationController)
-        navigationController.viewControllers = [mockViewController]
+        let homeViewController = HomeRouter.createModule(using: navigationController)
+        navigationController.viewControllers = [homeViewController]
         navigationController.tabBarItem.title = "Home"
         navigationController.tabBarItem.image = UIImage(systemName: "house.circle")!
         return navigationController
