@@ -5,7 +5,6 @@
 //  Created by Mehmet Ateş on 29.08.2022.
 //
 
-import Foundation
 
 protocol HomeInteractorInterface: AnyObject {
     var datas: [BaseModel]? { get }
