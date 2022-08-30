@@ -7,6 +7,7 @@
 
 protocol HomePresenterInterface: AnyObject {
     func notifyViewDidLoad()
+    func getDataByIndex(_ index: Int) -> BaseModel?
     var getItemCount: Int { get }
     var getSectionCount: Int { get }
 }
@@ -27,6 +28,10 @@ final class HomePresenter {
 
 // MARK: - Interface Setup
 extension HomePresenter: HomePresenterInterface {
+    
+    func getDataByIndex(_ index: Int) -> BaseModel? {
+        datas?[index]
+    }
     
     var getItemCount: Int {
         datas?.count ?? 0

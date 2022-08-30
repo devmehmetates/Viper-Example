@@ -68,6 +68,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        cell.configureLabels(with: presenter?.getDataByIndex(indexPath.row))
         return cell
     }
 }
