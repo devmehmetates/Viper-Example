@@ -7,9 +7,13 @@
 
 import Foundation
 
-protocol HomePresenterInterface: AnyObject { }
+protocol HomePresenterInterface: AnyObject {
+    func notifyViewDidLoad()
+    var getItemCount: Int { get }
+    var getSectionCount: Int { get }
+}
 
-final class HomePresenter: HomePresenterInterface {
+final class HomePresenter {
     
     private weak var view: HomeViewInterface?
     private weak var router: HomeRouterInterface?
@@ -19,6 +23,23 @@ final class HomePresenter: HomePresenterInterface {
         self.view = view
         self.router = router
         self.interactor = interactor
+    }
+}
+
+// MARK: - Interface Setup
+extension HomePresenter: HomePresenterInterface {
+    
+    var getItemCount: Int {
+        10
+    }
+    
+    var getSectionCount: Int {
+        1
+    }
+    
+    func notifyViewDidLoad() {
+        view?.setupView()
+        view?.setTitle(with: "Home")
     }
 }
 

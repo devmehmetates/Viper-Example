@@ -57,6 +57,7 @@
                                                 <constraint firstItem="cGo-0B-ZWh" firstAttribute="top" secondItem="eKB-RQ-D68" secondAttribute="bottom" constant="8" symbolic="YES" id="waZ-0v-Toj"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="eKB-RQ-D68" id="uoS-kO-N3n"/>
                                             <outlet property="subTitleLabel" destination="cGo-0B-ZWh" id="4PO-0T-iN3"/>
@@ -66,7 +67,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gVV-13-ilU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LAf-ub-L7b" firstAttribute="leading" secondItem="gVV-13-ilU" secondAttribute="leading" id="DRe-D9-vwE"/>
                             <constraint firstItem="LAf-ub-L7b" firstAttribute="top" secondItem="gVV-13-ilU" secondAttribute="top" id="DZl-7X-HFt"/>
@@ -84,6 +85,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
