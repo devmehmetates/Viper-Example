@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeViewInterface: AnyObject {
     func setupView()
+    func setupToolBar()
     func setTitle(with title: String)
     func reloadCollectionView() -> Void
 }
@@ -27,6 +28,19 @@ class HomeViewController: UIViewController {
 
 // MARK: - Interface Setup
 extension HomeViewController: HomeViewInterface, UICollectionViewDelegate {
+    
+    func setupToolBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: presenter?.navigationSortItemIcon ?? ""),
+            style: .done, target: self,
+            action: #selector(sortMoviesByAlfabet)
+        )
+    }
+    
+    @objc
+    func sortMoviesByAlfabet() {
+        presenter?.sortMoviesByAlfabet()
+    }
     
     func reloadCollectionView() {
         DispatchQueue.main.async {
