@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C047DCB728BE8923002BE948 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047DCB628BE8923002BE948 /* BaseModel.swift */; };
-		C047DCBB28BE89CC002BE948 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047DCBA28BE89CC002BE948 /* LocalService.swift */; };
+		C09A6B7528C275FE00A5F27A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A6B7428C275FE00A5F27A /* NetworkManager.swift */; };
+		C09A6B7728C277D000A5F27A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A6B7628C277D000A5F27A /* Movie.swift */; };
+		C09A6B7928C277D800A5F27A /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A6B7828C277D800A5F27A /* Movies.swift */; };
 		C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183A128BD31D3006AF715 /* AppDelegate.swift */; };
 		C0C183A428BD31D3006AF715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C183A328BD31D3006AF715 /* SceneDelegate.swift */; };
 		C0C183A928BD31D3006AF715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C183A728BD31D3006AF715 /* Main.storyboard */; };
@@ -25,8 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C047DCB628BE8923002BE948 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		C047DCBA28BE89CC002BE948 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		C09A6B7428C275FE00A5F27A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C09A6B7628C277D000A5F27A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C09A6B7828C277D800A5F27A /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		C0C1839E28BD31D3006AF715 /* Viper-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viper-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C183A128BD31D3006AF715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C183A328BD31D3006AF715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +60,8 @@
 		C047DCB528BE8910002BE948 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C047DCB628BE8923002BE948 /* BaseModel.swift */,
+				C09A6B7628C277D000A5F27A /* Movie.swift */,
+				C09A6B7828C277D800A5F27A /* Movies.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -66,7 +69,7 @@
 		C047DCB928BE89C2002BE948 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C047DCBA28BE89CC002BE948 /* LocalService.swift */,
+				C09A6B7428C275FE00A5F27A /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -229,16 +232,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C047DCBB28BE89CC002BE948 /* LocalService.swift in Sources */,
+				C09A6B7528C275FE00A5F27A /* NetworkManager.swift in Sources */,
 				C0C183C528BD37CB006AF715 /* HomePresenter.swift in Sources */,
+				C09A6B7728C277D000A5F27A /* Movie.swift in Sources */,
 				C0C183BC28BD351F006AF715 /* TabBarPresenter.swift in Sources */,
-				C047DCB728BE8923002BE948 /* BaseModel.swift in Sources */,
 				C0C183BA28BD34B1006AF715 /* TabBarController.swift in Sources */,
 				C0C183C728BD37E2006AF715 /* HomeInteractor.swift in Sources */,
 				C0C183A228BD31D3006AF715 /* AppDelegate.swift in Sources */,
 				C0C183CC28BD3B84006AF715 /* BaseCollectionViewCell.swift in Sources */,
 				C0C183A428BD31D3006AF715 /* SceneDelegate.swift in Sources */,
 				C0C183BE28BD3528006AF715 /* TabBarRouter.swift in Sources */,
+				C09A6B7928C277D800A5F27A /* Movies.swift in Sources */,
 				C0C183C928BD37E8006AF715 /* HomeRouter.swift in Sources */,
 				C0C183C328BD37BF006AF715 /* HomeViewController.swift in Sources */,
 			);

@@ -5,15 +5,25 @@
 //  Created by Mehmet Ateş on 29.08.2022.
 //
 
+import Foundation
 
 protocol HomeInteractorInterface: AnyObject {
-    var datas: [BaseModel]? { get }
+    func getDatas(result: @escaping([Movie]) -> Void) -> Void
 }
 
 final class HomeInteractor: HomeInteractorInterface {
     
-    var datas: [BaseModel]? {
-        let _ = LocalService() // dummy datas saving here
-        return LocalService.readData()
+    func getDatas(result: @escaping ([Movie]) -> Void) {
+        DispatchQueue.main.async {
+            NetworkManager.sendApiRequest(with: NetworkEndpoints.baseUrl.rawValue) { response in
+                switch response {
+                    
+                case .success(let moviesData):
+                   return result(moviesData)
+                case .failure:
+                    return result([])
+                }
+            }
+        }
     }
 }

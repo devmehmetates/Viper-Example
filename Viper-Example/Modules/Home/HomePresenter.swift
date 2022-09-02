@@ -5,9 +5,11 @@
 //  Created by Mehmet Ateş on 29.08.2022.
 //
 
+import Foundation
+
 protocol HomePresenterInterface: AnyObject {
     func notifyViewDidLoad()
-    func getDataByIndex(_ index: Int) -> BaseModel?
+    func getDataByIndex(_ index: Int) -> Movie?
     var getItemCount: Int { get }
     var getSectionCount: Int { get }
 }
@@ -17,7 +19,11 @@ final class HomePresenter {
     private weak var view: HomeViewInterface?
     private var router: HomeRouterInterface?
     private var interactor: HomeInteractorInterface?
-    private var datas: [BaseModel]?
+    private var datas: [Movie]? {
+        didSet {
+            view?.reloadCollectionView()
+        }
+    }
     
     init(view: HomeViewInterface?, router: HomeRouterInterface?, interactor: HomeInteractorInterface?) {
         self.view = view
@@ -29,7 +35,7 @@ final class HomePresenter {
 // MARK: - Interface Setup
 extension HomePresenter: HomePresenterInterface {
     
-    func getDataByIndex(_ index: Int) -> BaseModel? {
+    func getDataByIndex(_ index: Int) -> Movie? {
         datas?[index]
     }
     
@@ -44,7 +50,9 @@ extension HomePresenter: HomePresenterInterface {
     func notifyViewDidLoad() {
         view?.setupView()
         view?.setTitle(with: "Home")
-        datas = interactor?.datas
+        interactor?.getDatas(result: { [weak self] movies in
+            self?.datas = movies
+        })
     }
 }
 

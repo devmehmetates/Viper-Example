@@ -12,8 +12,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var subTitleLabel: UILabel!
     
-    func configureLabels(with model: BaseModel?) {
+    func configureLabels(with model: Movie?) {
         nameLabel.text = model?.title
-        subTitleLabel.text = model?.description
+        subTitleLabel.text = model?.overview
     }
 }

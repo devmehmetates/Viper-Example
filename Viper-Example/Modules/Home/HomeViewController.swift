@@ -10,6 +10,7 @@ import UIKit
 protocol HomeViewInterface: AnyObject {
     func setupView()
     func setTitle(with title: String)
+    func reloadCollectionView() -> Void
 }
 
 class HomeViewController: UIViewController {
@@ -26,6 +27,12 @@ class HomeViewController: UIViewController {
 
 // MARK: - Interface Setup
 extension HomeViewController: HomeViewInterface, UICollectionViewDelegate {
+    
+    func reloadCollectionView() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
     
     func setupView() {
         collectionView.delegate = self
