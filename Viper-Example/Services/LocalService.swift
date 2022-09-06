@@ -9,9 +9,7 @@ import Foundation
 
 final class LocalService {
     
-    init() {
-        saveDummyData()
-    }
+    static let shared: LocalService = LocalService()
     
     func saveDummyData() {
         let dataKey = "dummyDatas"
@@ -31,7 +29,7 @@ final class LocalService {
         }
     }
     
-    static func readData() -> [BaseModel]? {
+    func readData() -> [BaseModel]? {
         let dataKey = "dummyDatas"
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileURL = dir.appendingPathComponent(dataKey)

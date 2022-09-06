@@ -6,8 +6,9 @@
 //
 
 protocol HomePresenterInterface: AnyObject {
-    func notifyViewDidLoad()
+    func notifyViewDidLoad() -> Void
     func getDataByIndex(_ index: Int) -> BaseModel?
+    func fetchDatas() -> Void
     var getItemCount: Int { get }
     var getSectionCount: Int { get }
 }
@@ -29,8 +30,18 @@ final class HomePresenter {
 // MARK: - Interface Setup
 extension HomePresenter: HomePresenterInterface {
     
+    func notifyViewDidLoad() {
+        view?.setupView()
+        view?.setTitle(with: "Home")
+        fetchDatas()
+    }
+    
     func getDataByIndex(_ index: Int) -> BaseModel? {
         datas?[index]
+    }
+    
+    func fetchDatas() {
+        datas = interactor?.datas
     }
     
     var getItemCount: Int {
@@ -40,11 +51,4 @@ extension HomePresenter: HomePresenterInterface {
     var getSectionCount: Int {
         1
     }
-    
-    func notifyViewDidLoad() {
-        view?.setupView()
-        view?.setTitle(with: "Home")
-        datas = interactor?.datas
-    }
 }
-
