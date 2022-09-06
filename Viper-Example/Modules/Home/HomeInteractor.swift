@@ -13,7 +13,7 @@ protocol HomeInteractorInterface: AnyObject {
 final class HomeInteractor: HomeInteractorInterface {
     
     var datas: [BaseModel]? {
-        let _ = LocalService() // dummy datas saving here
-        return LocalService.readData()
+        LocalService.shared.saveDummyData() // dummy datas saving here
+        return LocalService.shared.readData()
     }
 }
