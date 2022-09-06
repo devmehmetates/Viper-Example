@@ -60,6 +60,10 @@ extension HomePresenter: HomePresenterInterface {
         datas?[index]
     }
     
+    func fetchDatas() {
+        datas = interactor?.datas
+    }
+    
     var getItemCount: Int {
         datas?.count ?? 0
     }
@@ -77,4 +81,3 @@ extension HomePresenter: HomePresenterInterface {
         })
     }
 }
-
