@@ -9,7 +9,9 @@ import Foundation
 
 final class NetworkManager {
     
-    static func sendApiRequest(with endpoint: String, completion: @escaping (Result<[Movie], RequestErrors>) -> Void) {
+    static let shared: NetworkManager = NetworkManager()
+    
+    func sendApiRequest(with endpoint: String, completion: @escaping (Result<[Movie], RequestErrors>) -> Void) {
         guard let requestURL: URL = URL(string: endpoint) else { return completion(.failure(.unknowedError)) }
         URLSession.shared.dataTask(with: requestURL) { data, response, error in
             guard error == nil, let data = data else { return completion(.failure(.unknowedError)) }

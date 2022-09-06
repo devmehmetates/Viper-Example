@@ -15,7 +15,7 @@ final class HomeInteractor: HomeInteractorInterface {
     
     func getDatas(result: @escaping ([Movie]) -> Void) {
         DispatchQueue.main.async {
-            NetworkManager.sendApiRequest(with: NetworkEndpoints.baseUrl.rawValue) { response in
+            NetworkManager.shared.sendApiRequest(with: NetworkEndpoints.baseUrl.rawValue) { response in
                 switch response {
                     
                 case .success(let moviesData):

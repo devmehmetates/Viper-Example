@@ -61,7 +61,9 @@ extension HomePresenter: HomePresenterInterface {
     }
     
     func fetchDatas() {
-        datas = interactor?.datas
+        interactor?.getDatas(result: { [weak self] movies in
+            self?.datas = movies
+        })
     }
     
     var getItemCount: Int {
@@ -76,8 +78,6 @@ extension HomePresenter: HomePresenterInterface {
         view?.setupView()
         view?.setTitle(with: "Home")
         view?.setupToolBar()
-        interactor?.getDatas(result: { [weak self] movies in
-            self?.datas = movies
-        })
+        fetchDatas()
     }
 }
