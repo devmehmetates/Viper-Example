@@ -29,4 +29,33 @@ class Viper_ExampleTests: XCTestCase {
         homeRouter = nil
         homeView = nil
     }
+    
+    func testNotifyViewDidLoad() {
+        homePresenter.notifyViewDidLoad()
+        XCTAssertTrue(homeView.invokedSetupView)
+        XCTAssertTrue(homeView.invokedSetTitle)
+    }
+    
+    func testGetDataByIndex() {
+        XCTAssertNil(homePresenter.getDataByIndex(0))
+        homeInteractor.stubbedDatas = BaseModel.exampleDummyModels
+        homePresenter.fetchDatas()
+        XCTAssertNotNil(homePresenter.getDataByIndex(0))
+    }
+    
+    func testFetchDatas() {
+        homePresenter.fetchDatas()
+        XCTAssertTrue(homeInteractor.invokedDatasGetter)
+    }
+    
+    func testGetItemCount() {
+        XCTAssertEqual(homePresenter.getItemCount, 0)
+        homeInteractor.stubbedDatas = BaseModel.exampleDummyModels
+        homePresenter.fetchDatas()
+        XCTAssertEqual(homePresenter.getItemCount, 4)
+    }
+    
+    func testGetSectionCount() {
+        XCTAssertEqual(homePresenter.getSectionCount, 1)
+    }
 }
