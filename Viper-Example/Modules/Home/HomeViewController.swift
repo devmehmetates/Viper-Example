@@ -16,11 +16,11 @@ class HomeViewController: UIViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
     private var listConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-    var presenter: HomePresenterInterface?
+    var presenter: HomePresenterInterface = HomePresenter(view: nil, router: nil, interactor: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.notifyViewDidLoad()
+        presenter.notifyViewDidLoad()
     }
 }
 
@@ -56,11 +56,11 @@ extension HomeViewController {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presenter?.getItemCount ?? 0
+        presenter.getItemCount
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        presenter?.getSectionCount ?? 0
+        presenter.getSectionCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,7 +68,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.configureLabels(with: presenter?.getDataByIndex(indexPath.row))
+        cell.configureLabels(with: presenter.getDataByIndex(indexPath.row))
         return cell
     }
 }
